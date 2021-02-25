@@ -15,8 +15,6 @@ sudo mount -t sysfs sysfs ./sys
 sudo mount -t proc proc ./proc
 sudo mount -t devtmpfs udev ./dev
 sudo mount -t devpts devpts ./dev/pts
-sudo mount -o ro,bind /etc/group ./etc/group
-sudo mount -o ro,bind /etc/passwd ./etc/passwd
 sudo mount --bind /run ./run
 sudo mkdir -p ./root
 sudo mount --bind ${HERE}/project ./root
@@ -29,8 +27,6 @@ set -e
 
 sudo umount ./root
 sudo umount ./run
-sudo umount ./etc/passwd
-sudo umount ./etc/group
 sudo umount ./dev/pts
 sudo umount ./dev
 sudo umount ./proc
