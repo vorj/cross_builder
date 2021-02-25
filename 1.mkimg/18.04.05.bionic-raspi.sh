@@ -20,5 +20,5 @@ HERE=$(pwd)
 WORKDIR=.chroot_dir/${IMG%.*}
 mkdir -p ${WORKDIR}
 pushd ${WORKDIR}
-sudo tar xpJf ${HERE}/${IMG}
+sudo tar xpJf ${HERE}/${IMG%.*}.tar.xz
 popd
